@@ -9,7 +9,8 @@ const pool = new Pool({
 });
 
 const query = (queryString, parameters, callback) => {
-    return pool.query(queryString, parameters, callback);
+    const result = pool.query(queryString, parameters, callback)
+    return result;
 };
 
 module.exports = { pool, query };
