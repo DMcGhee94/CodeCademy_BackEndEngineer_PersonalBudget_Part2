@@ -14,7 +14,7 @@ const getSpecificEnvelope = async (id) => {
 };
 
 const getMaxEnvelopeId = async () => {
-    const queryString = 'SELECT MAX(ENVELOPE_ID) as MAX_ID FROM ENVELOPES';
+    const queryString = 'SELECT COALESCE(MAX(ENVELOPE_ID), 0) as MAX_ID FROM ENVELOPES';
     const result = await db.query(queryString);
     return result;    
 };
